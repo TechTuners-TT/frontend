@@ -2,8 +2,12 @@
   <div class="container">
     <div class="bg-overlay"></div>
     <div class="form-container">
-      <h2>Log in to your Profile</h2>
-      <form @submit.prevent="handleLogin">
+      <h2>Sign up your Profile</h2>
+      <form @submit.prevent="handleSignUp">
+        <div>
+          <label>Your Name</label>
+          <input v-model="name" type="text" required />
+        </div>
         <div>
           <label>Email address</label>
           <input v-model="email" type="email" required />
@@ -16,19 +20,20 @@
          alt="Toggle Password Visibility" />
   </span>
 </div>
-        <button type="submit">Sign In</button>
+        <button type="submit">Sign Up</button>
       </form>
       <div class="divider">
         <span class="line"></span>
         <span>or continue with</span>
         <span class="line"></span>
       </div>
-      <button @click="loginWithGoogle" class="google-btn">
+      <button @click="signUpWithGoogle" class="google-btn">
         <img src="https://www.svgrepo.com/show/303108/google-icon-logo.svg" alt="Google" />
         Google
       </button>
       <button class="Guest-btn">Guest mode</button>
-    <p><a href="#">Don’t have a profile? Sign up here! </a></p>
+      <p><a href="#">Already have an account? Log in here!</a></p>
+     
     </div>
   </div>
 </template>
@@ -36,31 +41,29 @@
 <script>
 export default {
   name: 'App', // works at Add.vue with name Add connected main.js
-  //name: 'Sign_in'
-  components: {
-    
-  },
+ // name: 'SignUp',
   data() {
     return {
+      name: '',
       email: '',
       password: '',
       showPassword: false
     };
   },
   methods: {
-    togglePasswordVisibility() {
+    
+  togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   },
 
 
 
 
-
-    handleLogin() {
-      console.log('Logging in with', this.email, this.password);
+    handleSignUp() {
+      console.log('Signing up with', this.name, this.email, this.password);
     },
-    loginWithGoogle() {
-      console.log('Logging in with Google');
+    signUpWithGoogle() {
+      console.log('Signing up with Google');
     }
   }
 };
@@ -72,7 +75,6 @@ export default {
 * {
   font-family: 'Inter', sans-serif;
 }
-
 
 .container {
   display: flex;
@@ -94,13 +96,12 @@ export default {
 
 .form-container {
   position: relative;
-
   z-index: 10;
   width: 100%;
   padding: 20px;
   border-radius: 8px;
-  text-align: center; 
 
+  text-align: center; 
 }
 
 h2 {
@@ -213,9 +214,6 @@ button:hover {
 }
 
 
-
-
-
 p {
     margin-top: 18px;
     width: 384 px;
@@ -228,99 +226,100 @@ p {
     text-decoration: none;
   }
 
+
+
 /* Media queries for responsive design */
 @media (max-width: 425px) {
-  .form-container {
-    max-width: 280px; 
-    padding: 20px; 
-    width: 100%; 
-    margin: 0 auto; 
-  }
-
-  h2 {
-    font-size: 1.1rem;
-    width: 280px;
+    .form-container {
+      max-width: 280px; 
+      padding: 20px; 
+      width: 100%; 
+      margin: 0 auto; 
+    }
+  
+    h2 {
+      font-size: 1.1rem;
+      width: 280px;
+    }
+    
+    label,
+    input,
+    button {
+      width: 100%;  
+      max-width: 100%; 
+    }
+  
+    input {
+      box-sizing: border-box; 
+    }
+  
+    button {
+      width: 100%;
+    }
+  
+    .google-btn {
+      width: 100%; 
+    }
   }
   
-  label,
-  input,
-  button {
-    width: 100%;  
-    max-width: 100%; 
+  @media (max-width: 768px) and (min-width: 425px) {
+    .form-container {
+      max-width: 340px; 
+      padding: 20px; 
+      width: 100%; 
+      margin: 0 auto; 
+    }
+  
+    h2 {
+      
+      width: 340px;
+    }
+    
+    label,
+    input,
+    button {
+      width: 100%;  
+      max-width: 100%; 
+    }
+  
+    input {
+      box-sizing: border-box; 
+    }
+  
+    button {
+      width: 100%;
+    }
+  
+    .google-btn {
+      width: 100%; 
+    }
   }
-
-  input {
-    box-sizing: border-box; 
-  }
-
-  button {
-    width: 100%;
-  }
-
-  .google-btn {
-    width: 100%; 
-  }
-}
-
-@media (max-width: 768px) and (min-width: 425px) {
-  .form-container {
-    max-width: 320px; 
-    padding: 20px; 
-    width: 100%; 
-    margin: 0 auto; 
-  }
-
-  h2 {
+  
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .form-container {
+      max-width: 384px;  
+      padding: 20px; 
+      width: 100%;  
+      margin: 0 auto; 
+    }
+  
    
-    width: 320px;
+  
+    label,
+    input,
+    button {
+      width: 384;  
+      max-width: 100%; 
+    }
+  
+    .google-btn {
+      width: 100%;  
+    }
   }
   
-  label,
-  input,
-  button {
-    width: 100%;  
-    max-width: 100%; 
+  @media  (min-width: 1025px) {
+    .form-container {
+      max-width: 384px;
+    }
   }
-
-  input {
-    box-sizing: border-box; 
-  }
-
-  button {
-    width: 100%;
-  }
-
-  .google-btn {
-    width: 100%; 
-  }
-}
-
-@media (max-width: 1024px) and (min-width: 769px) {
-  .form-container {
-    max-width: 384px;  
-    padding: 20px; 
-    width: 100%;  
-    margin: 0 auto; 
-  }
-
- 
-  label,
-  input,
-  button {
-    width: 384;  
-    max-width: 100%; 
-  }
-
-  .google-btn {
-    width: 100%;  
-  }
-}
-
-@media  (min-width: 1025px) {
-  .form-container {
-    max-width: 384px;
-  }
-}
-
-
 </style>
