@@ -1,7 +1,7 @@
 <template>
 
 
-<svg v-if="name === 'Media'" class="nav-icon-add hover:scale-105 hover:text-purple-500 transition-all duration-300  
+<svg v-if="name === 'Media'" class="nav-icon-add hover:scale-105 hover:text-[#6D01D0] transition-all duration-300  
 w-[46px] h-[52px]
   sm:w-11.5 sm:h-13
   md:w-12 md:h-13 
@@ -19,7 +19,7 @@ width="60" height="65" fill="currentColor" viewBox="0 0 60 65">
 
 
        
-            <svg  v-if="name === 'Audio'" class="nav-icon-add hover:scale-105 hover:text-purple-500 transition-all duration-300
+            <svg  v-if="name === 'Audio'" class="nav-icon-add hover:scale-105 hover:text-[#6D01D0] transition-all duration-300
             w-[46px] h-[52px]
   sm:w-11.5 sm:h-13
   md:w-12 md:h-13 
@@ -36,7 +36,7 @@ width="60" height="65" fill="currentColor" viewBox="0 0 60 65">
 </svg>
       
        
-            <svg  v-if="name === 'Lyrics'" class="nav-icon-add hover:scale-105 hover:text-purple-500 transition-all duration-300
+            <svg  v-if="name === 'Lyrics'" class="nav-icon-add hover:scale-105 hover:text-[#6D01D0] transition-all duration-300
             w-[46px] h-[52px]
   sm:w-11.5 sm:h-13
   md:w-12 md:h-13 
@@ -53,7 +53,7 @@ width="60" height="65" fill="currentColor" viewBox="0 0 60 65">
 </svg>
 
 
-            <svg  v-if="name === 'MusicXML'" class="nav-icon-add hover:scale-105 hover:text-purple-500 transition-all duration-300
+            <svg  v-if="name === 'MusicXML'" class="nav-icon-add hover:scale-105 hover:text-[#6D01D0] transition-all duration-300
             w-[46px] h-[52px]
   sm:w-11.5 sm:h-13
   md:w-12 md:h-13 
@@ -83,7 +83,7 @@ width="60" height="65" fill="currentColor" viewBox="0 0 60 65">
   }
 
   .nav-icon-add:hover {
-    color: #7c3aed; /* Колір на hover - фіолетовий */
+    color: #6D01D0; /* Колір на hover - фіолетовий */
   }
 </style>
 
