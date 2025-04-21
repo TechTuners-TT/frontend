@@ -1,6 +1,6 @@
 <template>
 
-
+<!-- add button add post -->
 <svg v-if="name === 'Media'" class="nav-icon-add hover:scale-105 hover:text-[#6D01D0] transition-all duration-300  
 w-[46px] h-[52px]
   sm:w-11.5 sm:h-13
@@ -71,7 +71,7 @@ width="60" height="65" fill="currentColor" viewBox="0 0 60 65">
 
 </template>   
   <script setup lang="ts">
- import { onMounted, ref } from "vue";
+ 
 
   const props = defineProps<{ name: string }>();
 
