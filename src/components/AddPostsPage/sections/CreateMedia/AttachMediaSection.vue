@@ -62,7 +62,9 @@
           @click.stop="removeFile(idx)"
           class="absolute top-2 right-2 text-white bg-black/60 hover:bg-black/80 rounded-full w-7 h-7 flex items-center justify-center"
         >
-          ✖
+          <CloseIcon
+            class="2xl:w-[24px] 2xl:h-[24px] xl:w-[20px] xl:h-[20px] lg:w-[18px] lg:h-[18px] w-[16px] h-[16px]"
+          />
         </button>
       </div>
     </div>
@@ -109,7 +111,9 @@
           class="absolute top-4 right-4 bg-black/60 text-white rounded-full px-3 py-1 text-xl hover:bg-black"
           @click="modalPreview = null"
         >
-          ✖
+          <CloseIcon
+            class="2xl:w-[24px] 2xl:h-[24px] xl:w-[20px] xl:h-[20px] lg:w-[18px] lg:h-[18px] w-[16px] h-[16px]"
+          />
         </button>
       </div>
     </div>
@@ -118,6 +122,7 @@
 
 <script setup lang="ts">
 import AddIcon from "../../../SVG/AddPosts_Icons/AddIcon.vue";
+import CloseIcon from "../../../SVG/AddPosts_Icons/CloseIcon.vue";
 
 import { ref, onMounted, watch, nextTick } from "vue";
 import mediumZoom from "medium-zoom";
